@@ -1,9 +1,19 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { Provider } from 'react-redux';
+import { setupStore } from './store/store';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+const store = setupStore()
+
+test('renders homepage', () => {
+  render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+    );
+  const linkElement = screen.getByTestId('homepage');
   expect(linkElement).toBeInTheDocument();
 });
