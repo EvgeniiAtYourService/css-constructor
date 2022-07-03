@@ -8,7 +8,6 @@
     color: white;
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    display: block;
     border: none;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -16,7 +15,11 @@
 
 .btn-grad:hover {
     background-position: right center;
-    /* change the direction of the change here */
-    color: #fff;
     text-decoration: none;
+}
+
+.btn-disabled {
+    background-image: none;
+    background-color: lightgray;
+    color: rgba(255, 255, 255, 0.6);
 }

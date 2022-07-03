@@ -1,10 +1,17 @@
 import React from 'react'
-import { IButtonProps } from '../../../models/props/ButtonProps.model'
+import { ISuperButtonProps } from '../../../models/props/SuperButtonProps.model'
 import styles from './SuperButton.module.css'   
+import buildClassNames from 'classnames'
 
-const SuperButton = ({ children }: IButtonProps) => {
+const SuperButton = ({ children, disabled, ...props }: ISuperButtonProps) => {
+
+  const classNames = buildClassNames(styles['btn-grad'], {
+    [styles['btn-disabled']]: disabled,
+    'cursor-deafult': disabled,
+  })
+
   return (
-      <button className={styles['btn-grad']}>{children}</button>
+    <button className={classNames} {...props}>{children}</button>
   )
 }
 

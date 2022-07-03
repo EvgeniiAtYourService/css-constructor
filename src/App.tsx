@@ -3,26 +3,40 @@ import SuperButton from './components/common/SuperButton/SuperButton';
 import { useAppDispatch, useAppSelector } from './customHooks/redux.hooks';
 import { userSlice } from './store/slices/ConstructorSlice';
 import './global.css'
+import Div from './components/Div/Div';
 
 function App(): JSX.Element {
 
-  const { testText } = useAppSelector(
+  const { divCreated } = useAppSelector(
     (state) => state.constructorReducer
   )
 
-  const { changeTestText } = userSlice.actions
+  const { createDiv, removeDiv } = userSlice.actions
 
   const dispatch = useAppDispatch()
 
-  const handleChangeText = () => {
-    dispatch(changeTestText(Date.now().toString()))
+  const handleCreateDiv = () => {
+    dispatch(createDiv())
+  }
+
+  const handleResetStyles = () => {
+    // dispatch(createDiv())
+  }
+
+  const handleRemoveDiv = () => {
+    dispatch(removeDiv())
   }
 
   return (
     <div className="App" data-testid='homepage'>
       <div>
-        <SuperButton>Create div</SuperButton>
+        <SuperButton onClick={handleCreateDiv} disabled={divCreated}>Create div</SuperButton>
+        <SuperButton onClick={handleCreateDiv} disabled>Reset styles</SuperButton>
+        <SuperButton onClick={handleRemoveDiv} disabled={!divCreated}>Remove div</SuperButton>
         <hr className='rule' />
+        { divCreated && (
+          <Div divCreated={divCreated}>hello</Div>
+        ) }
       </div>
     </div>
   );

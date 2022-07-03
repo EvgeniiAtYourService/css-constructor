@@ -1,3 +1,3 @@
 export interface ConstructorState {
-    testText: string
+    divCreated: boolean
 }
