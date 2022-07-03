@@ -7,11 +7,11 @@ import Div from './components/Div/Div';
 
 function App(): JSX.Element {
 
-  const { divCreated } = useAppSelector(
+  const { divCreated, propertiesWindowShown } = useAppSelector(
     (state) => state.constructorReducer
   )
 
-  const { createDiv, removeDiv } = userSlice.actions
+  const { createDiv, removeDiv, showPropertiesWindow } = userSlice.actions
 
   const dispatch = useAppDispatch()
 
@@ -27,6 +27,10 @@ function App(): JSX.Element {
     dispatch(removeDiv())
   }
 
+  const handleShowPropertiesWindow = (value: boolean) => {
+    dispatch(showPropertiesWindow(value))
+  }
+
   return (
     <div className="App" data-testid='homepage'>
       <div>
@@ -35,7 +39,9 @@ function App(): JSX.Element {
         <SuperButton onClick={handleRemoveDiv} disabled={!divCreated}>Remove div</SuperButton>
         <hr className='rule' />
         { divCreated && (
-          <Div divCreated={divCreated}>Hello, i'm a div</Div>
+          <Div divCreated={divCreated} propertiesWindowShown={propertiesWindowShown} showPropertiesWindow={handleShowPropertiesWindow}>
+            Hello, i'm a div
+          </Div>
         ) }
       </div>
     </div>

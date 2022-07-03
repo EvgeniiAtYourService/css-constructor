@@ -3,6 +3,7 @@ import { ConstructorState } from '../../models/constructorState.model'
 
 const initialState: ConstructorState = {
     divCreated: false,
+    propertiesWindowShown: false,
 }
 
 export const userSlice = createSlice({
@@ -15,6 +16,9 @@ export const userSlice = createSlice({
         removeDiv(state) {
             state.divCreated = false
         },
+        showPropertiesWindow(state, action: PayloadAction<boolean>) {
+            state.propertiesWindowShown = action.payload
+        }
     },
 })
 

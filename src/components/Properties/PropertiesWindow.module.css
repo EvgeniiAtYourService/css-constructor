@@ -1,0 +1,8 @@
+.properties-window {
+    position: absolute;
+    top: 0;
+    right: -130px;
+
+    color: red;
+    border: 1px dotted purple;
+}
