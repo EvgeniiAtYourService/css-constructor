@@ -31,11 +31,11 @@ function App(): JSX.Element {
     <div className="App" data-testid='homepage'>
       <div>
         <SuperButton onClick={handleCreateDiv} disabled={divCreated}>Create div</SuperButton>
-        <SuperButton onClick={handleCreateDiv} disabled>Reset styles</SuperButton>
+        <SuperButton onClick={handleResetStyles} disabled>Reset styles</SuperButton>
         <SuperButton onClick={handleRemoveDiv} disabled={!divCreated}>Remove div</SuperButton>
         <hr className='rule' />
         { divCreated && (
-          <Div divCreated={divCreated}>hello</Div>
+          <Div divCreated={divCreated}>Hello, i'm a div</Div>
         ) }
       </div>
     </div>
