@@ -22,12 +22,15 @@
     background-color: palegreen;
 } */
 
-.gear-icon {
-    width: 25px;
-    cursor: pointer;
+.icon-wrapper {
     position: absolute;
     top: 0;
     right: -40px;
+}
+
+.gear-icon {
+    width: 25px;
+    cursor: pointer;
 }
 
 .gear-icon:hover {

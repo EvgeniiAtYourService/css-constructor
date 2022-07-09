@@ -1,8 +1,11 @@
 .properties-window {
     position: absolute;
     top: 0;
-    right: -130px;
+    left: 40px;
 
     color: red;
     border: 1px dotted purple;
+
+    width: 250px;
+    height: 100px;
 }

@@ -24,6 +24,7 @@ function App(): JSX.Element {
   }
 
   const handleRemoveDiv = () => {
+    dispatch(showPropertiesWindow(false))
     dispatch(removeDiv())
   }
 

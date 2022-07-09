@@ -13,10 +13,14 @@ const Div = ({ children, divCreated, propertiesWindowShown, showPropertiesWindow
   return (
     <div className={styles['common']} {...props}>
       {children}
-      <img src={gear} alt="Gear" className={styles['gear-icon']} onClick={handleTogglePropertiesWindow} />
+      <div className={styles['icon-wrapper']}>
+        <img src={gear} alt="Gear" className={styles['gear-icon']} onClick={handleTogglePropertiesWindow} />
       { propertiesWindowShown && (
-        <PropertiesWindow propertiesWindowShown={propertiesWindowShown} showPropertiesWindow={showPropertiesWindow} />
+        <div className={styles['properties-window-wrapper']}>
+          <PropertiesWindow propertiesWindowShown={propertiesWindowShown} showPropertiesWindow={showPropertiesWindow} />
+        </div>
       ) }
+      </div>
     </div>
   )
 }
