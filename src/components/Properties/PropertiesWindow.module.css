@@ -1,11 +1,72 @@
-.properties-window {
+.properties-window {    
     position: absolute;
     top: 0;
     left: 40px;
 
-    color: red;
-    border: 1px dotted purple;
+    padding: 10px;
 
-    width: 250px;
+    background-color:gainsboro;
+    color: red;
+    /* border: 1px dotted purple; */
+    box-shadow: 2px 2px 4px #666;
+    border-radius: 10px;
+
+    min-width: 250px;
     height: 100px;
+
+    transition: all ease-in-out 450ms;
+    animation: 600ms fade-in;
+}
+
+.search-field-wrapper {
+    width: 90%;
+    height: 25px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.x {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+
+    color: darkblue;
+    
+    cursor: pointer;
+
+    font-weight: 500;
+
+    /* transition: all ease-in-out 450ms; */
+    animation: 600ms fade-in;
+
+    user-select: none;
+}
+
+.x:hover {
+    font-weight: 700;
+}
+
+.search-field {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    padding: 2px 25px 2px 15px;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
